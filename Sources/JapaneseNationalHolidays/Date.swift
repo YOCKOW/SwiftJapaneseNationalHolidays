@@ -7,22 +7,12 @@
  
 @_exported import Foundation
 
-extension Locale {
-  public static let japan: Locale = .init(identifier: "ja_JP")
-}
-
-extension Calendar {
-  public static let japan: Calendar = Locale.japan.calendar
-}
-
-extension TimeZone {
-  /// Japan Standard Time (JST)
-  public static let japanStandardTime: TimeZone = Calendar.japan.timeZone
-}
+private let _gregorianCalendar = Calendar(identifier: .gregorian)
+private let _JST = TimeZone(identifier: "JST")!
 
 extension Date {
   public var dateComponentsInJapan: DateComponents {
-    return Calendar.japan.dateComponents(in: .japanStandardTime, from: self)
+    return _gregorianCalendar.dateComponents(in: _JST, from: self)
   }
   
   /// Returns the name of national holiday in Japan on the date specified by the instance,
