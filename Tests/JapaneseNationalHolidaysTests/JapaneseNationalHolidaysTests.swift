@@ -1,3 +1,10 @@
+/* *************************************************************************************************
+ JapaneseNationalHolidaysTests.swift
+   © 2020 YOCKOW.
+     Licensed under MIT License.
+     See "LICENSE.txt" for more information.
+ ************************************************************************************************ */
+
 import XCTest
 @testable import JapaneseNationalHolidays
 
@@ -77,5 +84,11 @@ final class JapaneseNationalHolidaysTests: XCTestCase {
     
     __assert((2018, 12, 23), "天皇誕生日")
     __assert((2018, 12, 24), "振替休日")
+  }
+  
+  func test_date() {
+    let date = Date(timeIntervalSince1970: 1600619025.0) // 2020-09-21 01:23:45 JST
+    XCTAssertEqual(date.japaneseNationalHolidayName, "敬老の日")
+    XCTAssertTrue(date.isJapaneseNationalHoliday)
   }
 }

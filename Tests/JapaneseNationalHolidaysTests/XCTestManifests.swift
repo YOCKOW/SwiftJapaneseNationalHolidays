@@ -6,6 +6,7 @@ extension JapaneseNationalHolidaysTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__JapaneseNationalHolidaysTests = [
+        ("test_date", test_date),
         ("test_holidayNames", test_holidayNames),
     ]
 }

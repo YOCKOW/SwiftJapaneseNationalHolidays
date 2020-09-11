@@ -12,10 +12,15 @@
 # Usage
 
 ```Swift
+import Foundation
 import JapaneseNationalHolidays
 
 // With a simple function
-japaneseNationalHolidayName(forYear: 2020, month: 7, day: 24) // -> "スポーツの日" 
+print(japaneseNationalHolidayName(forYear: 2020, month: 7, day: 24)!) // -> "スポーツの日"
+
+// With `Date`
+let date = Date(timeIntervalSince1970: 1600619025.0) // 2020-09-21 01:23:45 JST
+print(date.japaneseNationalHolidayName!) // -> "敬老の日"
 
 ```
 
