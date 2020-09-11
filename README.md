@@ -12,7 +12,6 @@
 # Usage
 
 ```Swift
-import Foundation
 import JapaneseNationalHolidays
 
 // With a simple function
