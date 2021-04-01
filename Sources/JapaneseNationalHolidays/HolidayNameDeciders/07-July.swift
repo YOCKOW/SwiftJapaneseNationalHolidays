@@ -7,11 +7,11 @@
  
 internal func _julyHolidayName(day: Int, year: Int) -> String? {
   switch (day, year) {
-  case (20, 1996..<2003), (23, 2020):
+  case (20, 1996..<2003), (23, 2020), (22, 2021):
     fallthrough
-  case (_, 2003...) where year != 2020 && _numberOfMonday(year: year, month: 7, day: day) == 3:
+  case (_, 2003...) where year != 2020 && year != 2021 && _numberOfMonday(year: year, month: 7, day: day) == 3:
     return "海の日"
-  case (24, 2020):
+  case (24, 2020), (23, 2021):
     return "スポーツの日"
   case (30, 1913...1926):
     return "明治天皇祭"
