@@ -5,7 +5,7 @@
 
 # Requirements
 
-- Swift 5
+- Swift 5, 6
 - macOS or Linux
 
 
